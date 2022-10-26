@@ -15,11 +15,17 @@ def hello_world():
 
 
 @app.route("/BuyAndSaleExchange/<exchange>/<cryptomoneda>/<PriceUsdCop>")
-def Exchange(exchange,cryptomoneda,PriceUsdCop):
+def Exchange(exchange,cryptomoneda,PriceUsdCop=None):
 
    instance = exchanges_price()
 
-   diccionario = {'Data':instance.dictionary(exchange, cryptomoneda,PriceUsdCop)}
+   if PriceUsdCop == None:
+
+      diccionario = {'Data':instance.dictionary(exchange, cryptomoneda)}
+   
+   else:
+
+      diccionario = {'Data':instance.dictionary(exchange, cryptomoneda,PriceUsdCop)}
 
 
    return escape(diccionario)
@@ -36,4 +42,5 @@ def FullExchanges():
    return escape(list)
 
 
-
+if __name__=='__main__':
+   app.run(port=8080)
