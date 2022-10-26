@@ -14,12 +14,12 @@ def hello_world():
     return "<p>Hello, World!</p>"
 
 
-@app.route("/BuyAndSaleExchange/<exchange>/<cryptomoneda>")
-def Exchange(exchange,cryptomoneda):
+@app.route("/BuyAndSaleExchange/<exchange>/<cryptomoneda>/<PriceUsdCop>")
+def Exchange(exchange,cryptomoneda,PriceUsdCop):
 
    instance = exchanges_price()
 
-   diccionario = {'Data':instance.dictionary(exchange, cryptomoneda)}
+   diccionario = {'Data':instance.dictionary(exchange, cryptomoneda,PriceUsdCop)}
 
 
    return escape(diccionario)

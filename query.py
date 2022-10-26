@@ -1,19 +1,17 @@
 import requests
-from scrapy import search_usd
 
 class exchanges_price():
 
     def __init__(self):
 
-        self.instance1 = search_usd()
         self.list_exchnges = ['buda',
                               'bitso']
         self.list_cripto = ['btc']
 
-    def dictionary(self,exchange:str = 'buda',cryptomoneda:str='btc'):
+    def dictionary(self,exchange:str = 'buda',cryptomoneda:str='btc',UsdCop:str= 4800.00):
 
-        UsdCop = self.instance1.QueryUsdCop()
-        UsdArs = self.instance1.QueryUsdArs()
+        UsdCop = float(UsdCop)
+
 
         if exchange == self.list_exchnges[0]:
 
@@ -40,6 +38,8 @@ class exchanges_price():
             return diccionario
 
 
+
+#consulta = requests.get('http://127.0.0.1:5000/BuyAndSaleFull').json()
 
 
 
