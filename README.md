@@ -1,1 +1,1 @@
-# BuyAndSaleInExchanges
+api rest
