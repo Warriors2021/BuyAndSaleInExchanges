@@ -4,14 +4,14 @@ from markupsafe import escape
 
 app = Flask(__name__)
 
-
-@app.route("/<name>")
-def hello(name):
-    return f"Hello, {escape(name)}!"
-
 @app.route("/")
-def hello_world():
-    return "<h1>Hello, World probando desarrollo Alexander!</h1>"
+def list():
+
+   listPath = {"SearchExchange": "/BuyAndSaleExchange/<exchange>/<cryptomoneda>/<PriceUsdCop>",
+               "SearchFullExchange": "/BuyAndSaleFull"}
+   
+   return escape(listPath)
+    
 
 
 @app.route("/BuyAndSaleExchange/<exchange>/<cryptomoneda>/<PriceUsdCop>")
