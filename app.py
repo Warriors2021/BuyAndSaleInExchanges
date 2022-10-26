@@ -11,7 +11,7 @@ def hello(name):
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<h1>Hello, World!</h1>"
 
 
 @app.route("/BuyAndSaleExchange/<exchange>/<cryptomoneda>/<PriceUsdCop>")
@@ -43,4 +43,4 @@ def FullExchanges():
 
 
 if __name__=='__main__':
-   app.run(port=8080)
+   app.run()
